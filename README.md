@@ -145,7 +145,7 @@ The AWS account ID has been redacted from the screenshot before publication.
 
 ## Step 13 – Validate Authorized S3 Access Using IAM Policy Simulation
 
-![S3 IAM Policy Simulation](images/13-iam-simulator-s3-allowed.png)
+![S3 IAM Policy Simulation](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/1e5a453335f703323d461f1dcf00b6c38b086dcf/Screenshot%202026-10-08%20141452.png)
 
 **Figure 13 – Simulating Authorized S3 Read Access:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate the `s3:ListAllMyBuckets` permission assigned to the `cloud-security-analyst` IAM user.
 
