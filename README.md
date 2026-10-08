@@ -123,7 +123,7 @@ Sensitive AWS account and resource identifiers have been redacted from the scree
 
 ## Step 11 – Verify No Unauthorized EC2 Instance Was Created
 
-![Verify No EC2 Instances](images/11-verify-no-ec2-instance-created.png)
+![Verify No EC2 Instances](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/b441a935131c0801c0bbdc6bc3141b76bd2eeeca/Screenshot%202026-10-08%20134914.png)
 
 **Figure 11 – Verifying EC2 Resource Creation Was Blocked:** After AWS denied the EC2 launch workflow, I returned to the Amazon EC2 Instances dashboard to verify that no instance had been provisioned.
 
