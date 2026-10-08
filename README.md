@@ -3,7 +3,7 @@ configure identities, groups, policies, and roles, then test authorized and deni
 
 ## Step 1 – Review the AWS IAM Dashboard
 
-![AWS IAM Dashboard](images/01-aws-iam-dashboard.png)
+![AWS IAM Dashboard](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/f8b9648ae05da35deaccde4f8d48b6173768428f/Screenshot%202026-10-08%20005747.png)
 
 **Figure 1 – Reviewing AWS IAM Security and Resources:** I accessed the AWS Identity and Access Management (IAM) dashboard to review the account's identity resources and security recommendations.
 
