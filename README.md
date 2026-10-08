@@ -177,7 +177,7 @@ AWS displayed a successful policy creation confirmation. The next phase verifies
 
 ## Step 16 – Attach the Custom IAM Policy to the Security Group
 
-![Attach Custom IAM Policy](images/16-attach-custom-iam-policy.png)
+![Attach Custom IAM Policy](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/2a1c237a9e5396b7aa330be8efd5013c9715d486/Screenshot%202026-10-08%20144507.png)
 
 **Figure 16 – Assigning a Custom Least-Privilege Policy:** I attached the customer-managed `CloudSecurity-CustomReadOnly` policy to the `CloudSecurity-ReadOnly` IAM group.
 
