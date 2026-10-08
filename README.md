@@ -58,3 +58,65 @@ AWS confirmed the successful registration with the message `Passkey MFA device a
 This strengthens account authentication by adding phishing-resistant protection to the IAM user's AWS Management Console access.
 
 The AWS account ID has been redacted from the screenshot before publication.
+
+## Step 6 – Verify Inherited IAM Permissions
+
+![Verify IAM Permissions](images/06-verify-inherited-iam-permissions.png)
+
+**Figure 6 – Verifying Group-Based IAM Permissions:** I reviewed the permissions assigned to the `cloud-security-analyst` IAM user to verify that access was inherited through the `CloudSecurity-ReadOnly` group.
+
+The permissions summary confirmed that the AWS-managed `ReadOnlyAccess` policy was inherited through group membership rather than attached directly to the user.
+
+The account also had the `IAMUserChangePassword` policy attached directly to support password management.
+
+This verification confirmed that IAM group membership was functioning as intended and established a baseline for subsequent access-control testing.
+
+## Step 7 – Validate Read-Only Access to Amazon S3
+
+![Verify S3 Read-Only Access](images/07-verify-s3-readonly-access.png)
+
+**Figure 7 – Validating Authorized S3 Access:** I signed in to the AWS Management Console using the restricted `cloud-security-analyst` IAM user and accessed Amazon S3.
+
+The S3 console successfully displayed the general-purpose bucket inventory, confirming that the user could list S3 buckets through the permissions inherited from the `CloudSecurity-ReadOnly` group.
+
+The account contained no general-purpose S3 buckets at the time of testing. No access-denied errors occurred while retrieving the bucket listing.
+
+This verified the user's ability to perform an authorized read operation without administrative access.
+
+## Step 8 – Validate Least-Privilege Enforcement in Amazon S3
+
+![S3 Bucket Creation Access Denied](images/08-s3-create-bucket-access-denied.png)
+
+**Figure 8 – Validating Unauthorized S3 Bucket Creation:** I attempted to create an Amazon S3 bucket while authenticated as the restricted `cloud-security-analyst` IAM user.
+
+AWS rejected the operation and displayed the message `Failed to create bucket`, indicating that the `s3:CreateBucket` permission was required.
+
+This confirmed that the IAM user's inherited `ReadOnlyAccess` policy allowed S3 bucket listing but did not authorize bucket creation.
+
+The test demonstrated that AWS IAM enforced the configured read-only access restrictions and prevented an unauthorized resource-creation operation.
+
+## Step 9 – Validate Read-Only Access to Amazon EC2
+
+![Verify EC2 Read-Only Access](images/09-verify-ec2-readonly-access.png)
+
+**Figure 9 – Validating Authorized EC2 Resource Access:** I accessed the Amazon EC2 Dashboard in the US East (Ohio) region while authenticated as the restricted `cloud-security-analyst` IAM user.
+
+The dashboard successfully displayed the account's EC2 resource inventory, including instances, security groups, Elastic IP addresses, and storage resources.
+
+The results confirmed that no EC2 instances were running and that the account contained two security groups and one Elastic IP address.
+
+This verified that the IAM user could view EC2 resource information through its inherited `ReadOnlyAccess` policy without requiring administrative permissions.
+
+## Step 10 – Validate EC2 Resource Creation Restrictions
+
+![EC2 Instance Launch Access Denied](images/10-ec2-launch-access-denied.png)
+
+**Figure 10 – Validating EC2 Access Restrictions:** I attempted to launch an Amazon EC2 instance while authenticated as the restricted `cloud-security-analyst` IAM user.
+
+AWS rejected the launch workflow because the account lacked the `ec2:CreateSecurityGroup` permission required by the selected configuration.
+
+The authorization failure confirmed that the IAM user's inherited `ReadOnlyAccess` policy did not permit the security group creation operation.
+
+This test demonstrated how AWS IAM prevents unauthorized infrastructure changes during EC2 provisioning.
+
+Sensitive AWS account and resource identifiers have been redacted from the screenshot.
