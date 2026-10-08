@@ -37,7 +37,7 @@ This configuration allows IAM users assigned to the group to inherit read-only p
 
 ## Step 4 – Create a Restricted IAM User
 
-![Restricted IAM User](images/04-create-restricted-iam-user.png)
+![Restricted IAM User](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/13ba70d3fed9f2593a471fc92c75a180426cb01e/Screenshot%202026-10-08%20021552.png)
 
 **Figure 4 – Creating and Assigning an IAM User:** I created an IAM user named `cloud-security-analyst` with AWS Management Console access and assigned it to the `CloudSecurity-ReadOnly` group.
 
