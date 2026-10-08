@@ -13,7 +13,7 @@ This initial assessment established a baseline for configuring AWS identities, s
 
 ## Step 2 – Secure the AWS Root Account with MFA
 
-![AWS Root Account MFA](images/02-root-mfa-security.png)
+![AWS Root Account MFA](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/8ef8bbc7370de8e442b20fb836f539133e4269b3/Screenshot%202026-10-08%20010217.png)
 
 **Figure 2 – Configuring Root Account Multi-Factor Authentication:** I strengthened the AWS root account's authentication security by registering a Windows Hello passkey as a multi-factor authentication (MFA) device.
 
