@@ -25,7 +25,7 @@ Sensitive account information has been redacted from the screenshot before publi
 
 ## Step 3 – Create an IAM Read-Only User Group
 
-![IAM Read-Only User Group](images/03-create-readonly-user-group.png)
+![IAM Read-Only User Group](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/71deb1343ad1138a8a1559ff46bb21d3bb4a0c6e/Screenshot%202026-10-08%20012302.png)
 
 **Figure 3 – Configuring an IAM User Group:** I created an IAM user group named `CloudSecurity-ReadOnly` to establish a centralized permissions structure for read-only access.
 
