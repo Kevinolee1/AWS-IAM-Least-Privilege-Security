@@ -73,7 +73,7 @@ This verification confirmed that IAM group membership was functioning as intende
 
 ## Step 7 – Validate Read-Only Access to Amazon S3
 
-![Verify S3 Read-Only Access](images/07-verify-s3-readonly-access.png)
+![Verify S3 Read-Only Access](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/69168bd2e8db18f886ef395422454412224cb577/Screenshot%202026-10-08%20130530.png)
 
 **Figure 7 – Validating Authorized S3 Access:** I signed in to the AWS Management Console using the restricted `cloud-security-analyst` IAM user and accessed Amazon S3.
 
