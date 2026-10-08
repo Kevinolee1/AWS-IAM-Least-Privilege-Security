@@ -225,7 +225,7 @@ These results demonstrated that the custom IAM policy restricted access to expli
 
 ## Step 20 – Final IAM Least-Privilege Security Verification
 
-![Final IAM Security Verification](images/20-final-iam-least-privilege-verification.png)
+![Final IAM Security Verification](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/ae18405fd02a3c0fcb2001a009ffcbcbb80e2903/Screenshot%202026-10-08%20145748.png)
 
 **Figure 20 – Final Verification of IAM Least-Privilege Controls:** I performed a final AWS IAM permission simulation using AWS CloudShell and the AWS CLI to validate the effective permissions assigned to the `cloud-security-analyst` IAM user.
 
