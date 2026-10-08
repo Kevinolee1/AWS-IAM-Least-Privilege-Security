@@ -109,7 +109,7 @@ This verified that the IAM user could view EC2 resource information through its 
 
 ## Step 10 – Validate EC2 Resource Creation Restrictions
 
-![EC2 Instance Launch Access Denied](images/10-ec2-launch-access-denied.png)
+![EC2 Instance Launch Access Denied](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/84d18272fc7af882aec38b0ef32e975741647165/Screenshot%202026-10-08%20132544.png)
 
 **Figure 10 – Validating EC2 Access Restrictions:** I attempted to launch an Amazon EC2 instance while authenticated as the restricted `cloud-security-analyst` IAM user.
 
