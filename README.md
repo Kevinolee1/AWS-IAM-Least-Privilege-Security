@@ -155,7 +155,7 @@ This result complemented the previous EC2 simulation, which returned `implicitDe
 
 ## Step 14 – Simulate Unauthorized S3 Bucket Creation
 
-![S3 Bucket Creation Permission Simulation](images/14-iam-simulator-s3-create-denied.png)
+![S3 Bucket Creation Permission Simulation](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/435ee124ace10bf414ee26fdbb193e2871254eef/Screenshot%202026-10-08%20141641.png)
 
 **Figure 14 – Validating S3 Resource Creation Restrictions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate whether the `cloud-security-analyst` IAM user could perform the `s3:CreateBucket` action.
 
