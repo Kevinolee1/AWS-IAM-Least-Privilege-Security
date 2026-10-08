@@ -201,7 +201,7 @@ The change demonstrated how replacing broad AWS-managed permissions with a narro
 
 ## Step 18 – Verify Custom Least-Privilege Policy Permissions
 
-![Verify Custom IAM Policy](images/18-verify-custom-policy-allowed-actions.png)
+![Verify Custom IAM Policy](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/092fd138340fbb5b2adb4e48cbb73520aca96a19/Screenshot%202026-10-08%20145445.png)
 
 **Figure 18 – Validating Authorized IAM Permissions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to verify the permissions assigned to the `cloud-security-analyst` IAM user after replacing the broader AWS-managed policy.
 
