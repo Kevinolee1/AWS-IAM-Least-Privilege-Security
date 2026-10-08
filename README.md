@@ -174,3 +174,67 @@ The simulation evaluated IAM permissions without provisioning any AWS resources.
 The policy was configured to allow two read-only actions: `s3:ListAllMyBuckets` and `ec2:DescribeInstances`.
 
 AWS displayed a successful policy creation confirmation. The next phase verifies the policy configuration before assigning it to the IAM security group.
+
+## Step 16 – Attach the Custom IAM Policy to the Security Group
+
+![Attach Custom IAM Policy](images/16-attach-custom-iam-policy.png)
+
+**Figure 16 – Assigning a Custom Least-Privilege Policy:** I attached the customer-managed `CloudSecurity-CustomReadOnly` policy to the `CloudSecurity-ReadOnly` IAM group.
+
+AWS confirmed that the policy was successfully attached. The group's permissions list displayed both the custom policy and the existing AWS-managed `ReadOnlyAccess` policy.
+
+This established the custom policy before transitioning the group away from broader AWS-managed read-only permissions.
+
+AWS account identifiers have been redacted from the screenshot.
+
+## Step 17 – Enforce Custom Least-Privilege IAM Permissions
+
+![Enforce Custom IAM Permissions](images/17-enforce-custom-least-privilege.png)
+
+**Figure 17 – Enforcing Least-Privilege Access:** I removed the AWS-managed `ReadOnlyAccess` policy from the `CloudSecurity-ReadOnly` IAM group while retaining the customer-managed `CloudSecurity-CustomReadOnly` policy.
+
+The updated permissions configuration confirmed that the group contained only one attached policy.
+
+This reduced the group's resource permissions to two explicitly authorized actions: `s3:ListAllMyBuckets` and `ec2:DescribeInstances`.
+
+The change demonstrated how replacing broad AWS-managed permissions with a narrowly scoped customer-managed policy can reduce unnecessary access.
+
+## Step 18 – Verify Custom Least-Privilege Policy Permissions
+
+![Verify Custom IAM Policy](images/18-verify-custom-policy-allowed-actions.png)
+
+**Figure 18 – Validating Authorized IAM Permissions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to verify the permissions assigned to the `cloud-security-analyst` IAM user after replacing the broader AWS-managed policy.
+
+The simulation evaluated two actions: `s3:ListAllMyBuckets` and `ec2:DescribeInstances`.
+
+Both actions returned `allowed`, confirming that the custom `CloudSecurity-CustomReadOnly` policy preserved the intended S3 and EC2 read permissions.
+
+This verification demonstrated that the IAM user retained its explicitly authorized access after the least-privilege policy transition.
+
+## Step 19 – Verify Unauthorized IAM Actions Are Denied
+
+![Verify Denied IAM Actions](images/19-verify-custom-policy-denied-actions.png)
+
+**Figure 19 – Validating Least-Privilege Restrictions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate three unauthorized actions assigned to the `cloud-security-analyst` IAM user.
+
+The simulation tested `ec2:RunInstances`, `s3:CreateBucket`, and `s3:ListBucket`.
+
+All three actions returned `implicitDeny`, confirming that the user's effective IAM permissions did not grant authorization to launch EC2 instances, create S3 buckets, or list objects within individual S3 buckets.
+
+These results demonstrated that the custom IAM policy restricted access to explicitly authorized operations while preventing additional infrastructure and storage actions.
+
+## Step 20 – Final IAM Least-Privilege Security Verification
+
+![Final IAM Security Verification](images/20-final-iam-least-privilege-verification.png)
+
+**Figure 20 – Final Verification of IAM Least-Privilege Controls:** I performed a final AWS IAM permission simulation using AWS CloudShell and the AWS CLI to validate the effective permissions assigned to the `cloud-security-analyst` IAM user.
+
+The simulation evaluated five AWS actions across Amazon S3 and Amazon EC2.
+
+Two authorized actions, `s3:ListAllMyBuckets` and `ec2:DescribeInstances`, returned `allowed`.
+
+Three unauthorized actions, `ec2:RunInstances`, `s3:CreateBucket`, and `s3:ListBucket`, returned `implicitDeny`.
+
+All five results matched the expected security configuration, confirming that the custom `CloudSecurity-CustomReadOnly` policy enforced the intended least-privilege access restrictions.
+
+This completed the AWS IAM & Least-Privilege Security lab, including IAM user and group management, MFA configuration, customer-managed policies, access-denied testing, and IAM permission simulation.
