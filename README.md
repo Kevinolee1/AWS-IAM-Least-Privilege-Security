@@ -133,7 +133,7 @@ This follow-up verification established that the unauthorized provisioning attem
 
 ## Step 12 – Simulate IAM Permissions for EC2 Instance Launch
 
-![IAM Policy Simulation](images/12-iam-policy-simulator-ec2.png)
+![IAM Policy Simulation](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/0fd208a645fb4390b3750ee727c5baf2314478d1/Screenshot%202026-10-08%20141242.png)
 
 **Figure 12 – Validating EC2 Launch Permissions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate whether the `cloud-security-analyst` IAM user was authorized to perform the `ec2:RunInstances` action.
 
