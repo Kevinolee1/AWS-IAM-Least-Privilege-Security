@@ -120,3 +120,57 @@ The authorization failure confirmed that the IAM user's inherited `ReadOnlyAcces
 This test demonstrated how AWS IAM prevents unauthorized infrastructure changes during EC2 provisioning.
 
 Sensitive AWS account and resource identifiers have been redacted from the screenshot.
+
+## Step 11 – Verify No Unauthorized EC2 Instance Was Created
+
+![Verify No EC2 Instances](images/11-verify-no-ec2-instance-created.png)
+
+**Figure 11 – Verifying EC2 Resource Creation Was Blocked:** After AWS denied the EC2 launch workflow, I returned to the Amazon EC2 Instances dashboard to verify that no instance had been provisioned.
+
+The instance inventory displayed `No instances`, confirming that the attempted launch did not create an EC2 instance in the selected AWS region.
+
+This follow-up verification established that the unauthorized provisioning attempt was blocked without leaving an active compute resource.
+
+## Step 12 – Simulate IAM Permissions for EC2 Instance Launch
+
+![IAM Policy Simulation](images/12-iam-policy-simulator-ec2.png)
+
+**Figure 12 – Validating EC2 Launch Permissions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate whether the `cloud-security-analyst` IAM user was authorized to perform the `ec2:RunInstances` action.
+
+The simulation returned `implicitDeny`, confirming that the user's effective IAM permissions did not grant EC2 instance launch authorization.
+
+This provided additional verification of the least-privilege restrictions configured through the `CloudSecurity-ReadOnly` IAM group.
+
+The AWS account ID has been redacted from the screenshot before publication.
+
+## Step 13 – Validate Authorized S3 Access Using IAM Policy Simulation
+
+![S3 IAM Policy Simulation](images/13-iam-simulator-s3-allowed.png)
+
+**Figure 13 – Simulating Authorized S3 Read Access:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate the `s3:ListAllMyBuckets` permission assigned to the `cloud-security-analyst` IAM user.
+
+The simulation returned `allowed`, confirming that the user's effective IAM permissions authorized listing Amazon S3 buckets.
+
+This result complemented the previous EC2 simulation, which returned `implicitDeny` for `ec2:RunInstances`, demonstrating that the configured permissions permitted authorized read operations while restricting infrastructure modifications.
+
+## Step 14 – Simulate Unauthorized S3 Bucket Creation
+
+![S3 Bucket Creation Permission Simulation](images/14-iam-simulator-s3-create-denied.png)
+
+**Figure 14 – Validating S3 Resource Creation Restrictions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate whether the `cloud-security-analyst` IAM user could perform the `s3:CreateBucket` action.
+
+The simulation returned `implicitDeny`, confirming that no applicable IAM policy granted permission to create the specified S3 bucket.
+
+This result reinforced the earlier S3 access-denied test and verified that the user's inherited read-only permissions prevented unauthorized storage resource creation.
+
+The simulation evaluated IAM permissions without provisioning any AWS resources.
+
+## Step 15 – Create a Custom Least-Privilege IAM Policy
+
+![Custom IAM Policy Created](images/15-create-custom-least-privilege-policy.png)
+
+**Figure 15 – Creating a Custom IAM Security Policy:** I created an AWS customer-managed IAM policy named `CloudSecurity-CustomReadOnly` to establish more restrictive access controls than the AWS-managed `ReadOnlyAccess` policy.
+
+The policy was configured to allow two read-only actions: `s3:ListAllMyBuckets` and `ec2:DescribeInstances`.
+
+AWS displayed a successful policy creation confirmation. The next phase verifies the policy configuration before assigning it to the IAM security group.
