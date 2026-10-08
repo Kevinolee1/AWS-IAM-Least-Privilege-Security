@@ -213,7 +213,7 @@ This verification demonstrated that the IAM user retained its explicitly authori
 
 ## Step 19 – Verify Unauthorized IAM Actions Are Denied
 
-![Verify Denied IAM Actions](images/19-verify-custom-policy-denied-actions.png)
+![Verify Denied IAM Actions](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/55713a8c3bc54b9d6efa0a26b41c3b4a0307a2ec/Screenshot%202026-10-08%20145613.png)
 
 **Figure 19 – Validating Least-Privilege Restrictions:** I used AWS CloudShell and the AWS CLI `simulate-principal-policy` command to evaluate three unauthorized actions assigned to the `cloud-security-analyst` IAM user.
 
