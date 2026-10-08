@@ -49,7 +49,7 @@ The AWS account ID has been redacted from the screenshot before publication.
 
 ## Step 5 – Configure Multi-Factor Authentication for the IAM User
 
-![IAM User MFA Configuration](ihttps://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/e61b7ff0dcbb1413b723ecaee7dee85a9195dc63/Screenshot%202026-10-08%20120237.png)
+![IAM User MFA Configuration](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/bb37ea607a54fa595b10a694c38930bb69a6919a/Screenshot%202026-10-08%20120237.png)
 
 **Figure 5 – Securing IAM User Authentication:** I configured multi-factor authentication (MFA) for the `cloud-security-analyst` IAM user using a Windows Hello passkey.
 
