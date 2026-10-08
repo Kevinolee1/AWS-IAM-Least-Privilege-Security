@@ -189,7 +189,7 @@ AWS account identifiers have been redacted from the screenshot.
 
 ## Step 17 – Enforce Custom Least-Privilege IAM Permissions
 
-![Enforce Custom IAM Permissions](images/17-enforce-custom-least-privilege.png)
+![Enforce Custom IAM Permissions](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/7c68c91052b561d7b71edebfd8587f3a0bd0095f/Screenshot%202026-10-08%20145150.png)
 
 **Figure 17 – Enforcing Least-Privilege Access:** I removed the AWS-managed `ReadOnlyAccess` policy from the `CloudSecurity-ReadOnly` IAM group while retaining the customer-managed `CloudSecurity-CustomReadOnly` policy.
 
