@@ -61,7 +61,7 @@ The AWS account ID has been redacted from the screenshot before publication.
 
 ## Step 6 – Verify Inherited IAM Permissions
 
-![Verify IAM Permissions](images/06-verify-inherited-iam-permissions.png)
+![Verify IAM Permissions](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/f95646c600751a1efc5f563d1a350a4ec49dace2/Screenshot%202026-10-08%20123156.png)
 
 **Figure 6 – Verifying Group-Based IAM Permissions:** I reviewed the permissions assigned to the `cloud-security-analyst` IAM user to verify that access was inherited through the `CloudSecurity-ReadOnly` group.
 
