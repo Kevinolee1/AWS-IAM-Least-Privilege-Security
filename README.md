@@ -97,7 +97,7 @@ The test demonstrated that AWS IAM enforced the configured read-only access rest
 
 ## Step 9 – Validate Read-Only Access to Amazon EC2
 
-![Verify EC2 Read-Only Access](images/09-verify-ec2-readonly-access.png)
+![Verify EC2 Read-Only Access](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/6bace71d0f853abb68640a4c39a37cb51dfc0950/Screenshot%202026-10-08%20131905.png)
 
 **Figure 9 – Validating Authorized EC2 Resource Access:** I accessed the Amazon EC2 Dashboard in the US East (Ohio) region while authenticated as the restricted `cloud-security-analyst` IAM user.
 
