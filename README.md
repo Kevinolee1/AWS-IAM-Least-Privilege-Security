@@ -85,7 +85,7 @@ This verified the user's ability to perform an authorized read operation without
 
 ## Step 8 – Validate Least-Privilege Enforcement in Amazon S3
 
-![S3 Bucket Creation Access Denied](images/08-s3-create-bucket-access-denied.png)
+![S3 Bucket Creation Access Denied](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/3f01ec7ed15ec628207c994fcde9a02ba6c4106b/Screenshot%202026-10-08%20131214.png)
 
 **Figure 8 – Validating Unauthorized S3 Bucket Creation:** I attempted to create an Amazon S3 bucket while authenticated as the restricted `cloud-security-analyst` IAM user.
 
