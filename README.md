@@ -167,7 +167,7 @@ The simulation evaluated IAM permissions without provisioning any AWS resources.
 
 ## Step 15 – Create a Custom Least-Privilege IAM Policy
 
-![Custom IAM Policy Created](images/15-create-custom-least-privilege-policy.png)
+![Custom IAM Policy Created](https://github.com/Kevinolee1/AWS-IAM-Least-Privilege-Security/blob/31731ac0353b3d6361973ff11fa23aa73b643954/Screenshot%202026-10-08%20142145.png)
 
 **Figure 15 – Creating a Custom IAM Security Policy:** I created an AWS customer-managed IAM policy named `CloudSecurity-CustomReadOnly` to establish more restrictive access controls than the AWS-managed `ReadOnlyAccess` policy.
 
